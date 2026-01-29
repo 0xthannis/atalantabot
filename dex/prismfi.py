@@ -12,7 +12,7 @@ from web3.exceptions import TransactionNotFound, ContractLogicError
 import json
 from datetime import datetime, timezone
 
-from config import Config, PRISMFI_ROUTER, ROUTER_ABI, FACTORY_ABI, PAIR_ABI, ERC20_ABI
+from config import Config, ROUTER_ABI, FACTORY_ABI, PAIR_ABI, ERC20_ABI
 
 logger = logging.getLogger(__name__)
 
@@ -22,7 +22,7 @@ class PrismFiDEX:
     def __init__(self, w3: Web3, async_w3: AsyncWeb3):
         self.w3 = w3
         self.async_w3 = async_w3
-        self.router_address = PRISMFI_ROUTER
+        self.router_address = Config.PRISMFI_ROUTER
         
         if not self.router_address:
             logger.warning("PrismFi router address not configured")
