@@ -9,7 +9,7 @@ from typing import Optional, List, Dict, Any
 from datetime import datetime, timezone
 
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
-from telegram.ext import ContextTypes, CommandHandler, MessageHandler, filters
+from telegram.ext import ContextTypes, CommandHandler as TelegramCommandHandler, MessageHandler, filters
 from telegram.constants import ParseMode
 
 from config import Config, WELCOME_MESSAGE, ERROR_MESSAGES, SUCCESS_MESSAGES, KEYBOARD_TEMPLATES
@@ -517,12 +517,12 @@ class CommandHandler:
     def get_handlers(self) -> List:
         """Get all command handlers"""
         return [
-            CommandHandler("start", self.handle_start),
-            CommandHandler("snipe", self.handle_snipe),
-            CommandHandler("arb", self.handle_arb),
-            CommandHandler("predict", self.handle_predict),
-            CommandHandler("wallet", self.handle_wallet),
-            CommandHandler("farm", self.handle_farm),
-            CommandHandler("stats", self.handle_stats),
-            CommandHandler("help", self.handle_help),
+            TelegramCommandHandler("start", self.handle_start),
+            TelegramCommandHandler("snipe", self.handle_snipe),
+            TelegramCommandHandler("arb", self.handle_arb),
+            TelegramCommandHandler("predict", self.handle_predict),
+            TelegramCommandHandler("wallet", self.handle_wallet),
+            TelegramCommandHandler("farm", self.handle_farm),
+            TelegramCommandHandler("stats", self.handle_stats),
+            TelegramCommandHandler("help", self.handle_help),
         ]
