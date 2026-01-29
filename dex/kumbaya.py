@@ -12,7 +12,7 @@ from web3.exceptions import TransactionNotFound, ContractLogicError
 import json
 from datetime import datetime, timezone
 
-from config import Config, KUMBADYA_ROUTER, KUMBADYA_FACTORY, ROUTER_ABI, FACTORY_ABI, PAIR_ABI, ERC20_ABI
+from config import Config, ROUTER_ABI, FACTORY_ABI, PAIR_ABI, ERC20_ABI
 
 logger = logging.getLogger(__name__)
 
@@ -22,8 +22,8 @@ class KumbayaDEX:
     def __init__(self, w3: Web3, async_w3: AsyncWeb3):
         self.w3 = w3
         self.async_w3 = async_w3
-        self.router_address = KUMBADYA_ROUTER
-        self.factory_address = KUMBADYA_FACTORY
+        self.router_address = Config.KUMBADYA_ROUTER
+        self.factory_address = Config.KUMBADYA_FACTORY
         
         # Initialize contracts
         self.router_contract = w3.eth.contract(

@@ -87,8 +87,10 @@ class Config:
         if not cls.MEGAETH_RPC:
             raise ValueError("MEGAETH_RPC is required")
         
+        # WalletConnect is optional for now
         if not cls.WALLETCONNECT_PROJECT_ID:
-            raise ValueError("WALLETCONNECT_PROJECT_ID is required")
+            import logging
+            logging.warning("WALLETCONNECT_PROJECT_ID not set - wallet features will be limited")
 
 # ERC-20 ABI (minimal)
 ERC20_ABI = [

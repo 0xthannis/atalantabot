@@ -13,7 +13,7 @@ from web3 import AsyncWeb3
 from web3.providers.websocket import WebsocketProviderV2
 import websockets
 
-from config import Config, KUMBADYA_FACTORY, FACTORY_ABI
+from config import Config, FACTORY_ABI
 
 logger = logging.getLogger(__name__)
 
@@ -47,7 +47,7 @@ class TokenMonitor:
     
     def __init__(self, async_w3: AsyncWeb3):
         self.async_w3 = async_w3
-        self.factory_address = KUMBADYA_FACTORY
+        self.factory_address = Config.KUMBADYA_FACTORY
         self.factory_contract = async_w3.eth.contract(
             address=self.factory_address,
             abi=FACTORY_ABI
