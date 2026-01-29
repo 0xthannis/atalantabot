@@ -1,0 +1,38 @@
+# Core dependencies
+python-telegram-bot==21.3
+web3==6.16.0
+aiosqlite==0.19.0
+python-dotenv==1.0.0
+aiolimiter==1.1.0
+
+# AI/ML dependencies
+torch==2.1.2
+scikit-learn==1.4.0
+numpy==1.24.4
+
+# Async HTTP and WebSocket
+aiohttp==3.9.1
+websockets==12.0
+
+# Database and caching
+async-timeout==4.0.3
+
+# Security and cryptography
+cryptography==41.0.8
+eth-account==0.10.0
+
+# Utilities
+structlog==23.2.0
+rich==13.7.0
+click==8.1.7
+
+# Development dependencies (optional)
+pytest==7.4.3
+pytest-asyncio==0.21.1
+black==23.12.1
+flake8==6.1.0
+mypy==1.8.0
+
+# Additional dependencies for production
+gunicorn==21.2.0
+uvicorn==0.24.0.post1
